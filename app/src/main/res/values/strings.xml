@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">Money Task</string>
+    <string name="name">Name :</string>
+    <string name="firstmonth">FirstMonth :</string>
+    <string name="currency_symbol">Currency Symbol :</string>
+    <string name="iso_code">Iso Code :</string>
+    <string name="last_modified">Last Modified :</string>
+    <string name="last_month">Last Month :</string>
+    <string name="accounts">Accounts</string>
+    <string name="budgets">Budgets</string>
+    <string name="payees">Payees Transactions</string>
+    <string name="balance">Balance :</string>
+    <string name="type">Type :</string>
+    <string name="what_type_of_account_are_you_adding">What type of account are you adding?</string>
+    <string name="give_it_a_nickname">Give it a nickname</string>
+    <string name="what_is_your_current_account_balance">What is your current account balance?</string>
+    <string name="create">Create</string>
+    <string name="cleared_balance">Cleared Balance :</string>
+    <string name="uncleared_balance">Uncleared Balance :</string>
+    <string name="account_name">Account Name :</string>
+    <string name="amount">Amount :</string>
+    <string name="memo">Memo :</string>
+    <string name="date">Date :</string>
+    <string name="select_date">Select Date</string>
+    <string name="select_payee">Select Payee :</string>
+    <string name="select_account">Select Account :</string>
+    <string name="select_budget">Select Budget :</string>
+    <string-array name="account_type">
+        <item>Select An Account Type ...</item>
+        <item>cash</item>
+        <item>savings</item>
+        <item>checking</item>
+        <item>creditCard</item>
+        <item>lineOfCredit</item>
+    </string-array>
+</resources>

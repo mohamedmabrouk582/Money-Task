@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/nav_graph"
+    app:startDestination="@id/budgetListFragment">
+
+    <fragment
+        android:id="@+id/budgetListFragment"
+        android:name="com.example.moneytask.views.fragments.BudgetListFragment"
+        android:label="BudgetListFragment" >
+        <action
+            android:id="@+id/action_budgetListFragment_to_budgetDetailsFragment"
+            app:destination="@id/budgetDetailsFragment" />
+        <action
+            android:id="@+id/action_budgetListFragment_to_payeeTransactionFragment"
+            app:destination="@id/payeeTransactionFragment" />
+        <action
+            android:id="@+id/action_budgetListFragment_to_accountListFragment"
+            app:destination="@id/accountListFragment" />
+    </fragment>
+    <dialog
+        android:id="@+id/budgetDetailsFragment"
+        android:name="com.example.moneytask.views.fragments.BudgetDetailsFragment"
+        android:label="BudgetDetailsFragment" >
+        <argument
+            android:name="BUDGET_KEY"
+            app:argType="com.example.domain.models.Budget" />
+    </dialog>
+    <fragment
+        android:id="@+id/payeeTransactionFragment"
+        android:name="com.example.moneytask.views.fragments.PayeeTransactionFragment"
+        android:label="PayeeTransactionFragment" >
+        <action
+            android:id="@+id/action_payeeTransactionFragment_to_createTransactionFragment"
+            app:destination="@id/createTransactionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/accountListFragment"
+        android:name="com.example.moneytask.views.fragments.AccountListFragment"
+        android:label="AccountListFragment" >
+        <action
+            android:id="@+id/action_accountListFragment_to_payeeTransactionFragment"
+            app:destination="@id/payeeTransactionFragment" />
+        <argument
+            android:name="BUDGET_ID"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_accountListFragment_to_createAccountFragment"
+            app:destination="@id/createAccountFragment" />
+        <action
+            android:id="@+id/action_accountListFragment_to_accountDetailsFragment"
+            app:destination="@id/accountDetailsFragment" />
+    </fragment>
+    <dialog
+        android:id="@+id/createAccountFragment"
+        android:name="com.example.moneytask.views.fragments.CreateAccountFragment"
+        android:label="CreateAccountFragment" >
+        <argument
+            android:name="BUDGET_ID"
+            app:argType="string" />
+    </dialog>
+    <dialog
+        android:id="@+id/accountDetailsFragment"
+        android:name="com.example.moneytask.views.fragments.AccountDetailsFragment"
+        android:label="AccountDetailsFragment" >
+        <argument
+            android:name="ACCOUNT_KEY"
+            app:argType="com.example.domain.models.Account" />
+    </dialog>
+    <dialog
+        android:id="@+id/createTransactionFragment"
+        android:name="com.example.moneytask.views.fragments.CreateTransactionFragment"
+        android:label="CreateTransactionFragment" >
+        <argument
+            android:name="BUDGET_PAYEES"
+            app:argType="com.example.domain.models.BudgetPayees" />
+    </dialog>
+</navigation>

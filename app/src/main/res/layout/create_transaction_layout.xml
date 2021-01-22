@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="vm"
+            type="com.example.moneytask.viewModels.CreateTransactionViewModel" />
+    </data>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/create"
+        android:onClick="@{(v)->vm.createClick(v)}"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/view2"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="8dp"
+        android:background="@color/purple_500"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button2" />
+
+    <Spinner
+        android:id="@+id/spinner_budget"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/spinner_shape"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView49"
+        app:layout_constraintTop_toBottomOf="@+id/view2" />
+
+    <Spinner
+        android:id="@+id/spinner_accounts"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/spinner_shape"
+        app:layout_constraintEnd_toEndOf="@+id/spinner_budget"
+        app:layout_constraintStart_toStartOf="@+id/spinner_budget"
+        app:layout_constraintTop_toBottomOf="@+id/spinner_budget" />
+
+    <Spinner
+        android:id="@+id/spinner_payees"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/spinner_shape"
+        app:layout_constraintEnd_toEndOf="@+id/spinner_accounts"
+        app:layout_constraintStart_toStartOf="@+id/spinner_accounts"
+        app:layout_constraintTop_toBottomOf="@+id/spinner_accounts" />
+
+    <TextView
+        android:id="@+id/textView49"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="@string/select_budget"
+        app:layout_constraintBottom_toBottomOf="@+id/spinner_budget"
+        app:layout_constraintStart_toStartOf="@+id/button2"
+        app:layout_constraintTop_toTopOf="@+id/spinner_budget" />
+
+    <TextView
+        android:id="@+id/textView50"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/select_account"
+        app:layout_constraintBottom_toBottomOf="@+id/spinner_accounts"
+        app:layout_constraintStart_toStartOf="@+id/textView49"
+        app:layout_constraintTop_toTopOf="@+id/spinner_accounts" />
+
+    <TextView
+        android:id="@+id/textView51"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/select_payee"
+        app:layout_constraintBottom_toBottomOf="@+id/spinner_payees"
+        app:layout_constraintStart_toStartOf="@+id/textView50"
+        app:layout_constraintTop_toTopOf="@+id/spinner_payees" />
+
+    <Button
+        android:id="@+id/btn_date"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
+        android:text="@string/select_date"
+        android:onClick="@{(v)-> vm.selectDate(v)}"
+        app:layout_constraintEnd_toEndOf="@+id/spinner_payees"
+        app:layout_constraintStart_toStartOf="@+id/textView51"
+        app:layout_constraintTop_toBottomOf="@+id/spinner_payees" />
+
+    <EditText
+        android:background="@drawable/spinner_shape"
+        android:id="@+id/edit_amount"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:padding="10dp"
+        android:hint="10000"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="@+id/btn_date"
+        app:layout_constraintStart_toEndOf="@+id/textView53"
+        app:layout_constraintTop_toBottomOf="@+id/btn_date" />
+
+    <EditText
+        android:id="@+id/edit_memo"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="32dp"
+        android:background="@drawable/spinner_shape"
+        android:ems="10"
+        android:hint="5"
+        android:inputType="number"
+        android:padding="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/btn_date"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/textView53"
+        app:layout_constraintTop_toBottomOf="@+id/edit_amount"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/textView53"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/amount"
+        app:layout_constraintBottom_toBottomOf="@+id/edit_amount"
+        app:layout_constraintStart_toStartOf="@+id/textView51"
+        app:layout_constraintTop_toTopOf="@+id/edit_amount" />
+
+    <TextView
+        android:id="@+id/textView54"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/memo"
+        app:layout_constraintBottom_toBottomOf="@+id/edit_memo"
+        app:layout_constraintStart_toStartOf="@+id/textView53"
+        app:layout_constraintTop_toTopOf="@+id/edit_memo" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
